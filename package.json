@@ -1,23 +1,49 @@
 {
-  "name": "next-one",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "17.0.21",
-    "@types/react": "17.0.39",
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.1.0",
-    "typescript": "4.5.5"
-  }
+	"name": "next-one",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"codegen": "graphql-codegen --config codegen.yml",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@apollo/client": "^3.5.9",
+		"@apollo/link-error": "^2.0.0-beta.3",
+		"@emotion/cache": "latest",
+		"@emotion/react": "latest",
+		"@emotion/server": "latest",
+		"@emotion/styled": "latest",
+		"@graphql-codegen/cli": "^2.6.2",
+		"@graphql-codegen/import-types-preset": "^2.1.12",
+		"@graphql-codegen/near-operation-file-preset": "^2.2.6",
+		"@graphql-codegen/typescript": "^2.4.5",
+		"@graphql-codegen/typescript-operations": "^2.3.2",
+		"@graphql-codegen/typescript-react-apollo": "^3.2.8",
+		"@mui/icons-material": "latest",
+		"@mui/material": "latest",
+		"@types/apollo-upload-client": "^17.0.0",
+		"@types/js-cookie": "^3.0.1",
+		"@types/lodash.isequal": "^4.5.5",
+		"apollo-upload-client": "^17.0.0",
+		"deepmerge": "^4.2.2",
+		"graphql": "^15.8.0",
+		"isomorphic-unfetch": "^3.1.0",
+		"js-cookie": "^3.0.1",
+		"lodash.isequal": "^4.5.0",
+		"next": "12.1.0",
+		"next-intl": "^2.4.0",
+		"next-seo": "^5.1.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"@types/node": "17.0.21",
+		"@types/react": "17.0.39",
+		"eslint": "8.9.0",
+		"eslint-config-next": "^12.1.0",
+		"typescript": "4.5.5"
+	}
 }

@@ -1,0 +1,22 @@
+query getPage($locale: I18NLocaleCode, $slug: String) {
+	pages(locale: $locale, filters: { slug: { eq: $slug } }) {
+		data {
+			id
+			attributes {
+				locale
+				title
+				slug
+				description
+				content
+				dynamicZone {
+					... on ComponentSharedTitle {
+						__typename
+						id
+						title
+						content
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+overwrite: true
+schema: "http://localhost:1337/graphql"
+documents: "graphql/**/*.graphql"
+generates:
+  generated/global/types.ts:
+      - "typescript"
+  generated/global:
+    preset: near-operation-file
+    presetConfig:
+      folder: __generated__
+      baseTypesPath: types.ts
+      extension: .ts
+    plugins:
+      - "typescript-react-apollo"
+      - "typescript-operations"
+    config:
+          reactApolloVersion: 3
+          withHooks: false
+          withHOC: false
+          withComponent: false
+    hooks:
+      afterAllFileWrite:
+        - eslint --fix
+        - prettier --write
