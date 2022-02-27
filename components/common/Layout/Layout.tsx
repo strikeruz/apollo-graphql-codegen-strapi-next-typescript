@@ -13,9 +13,9 @@ const Layout = ({ children, pageContext, navigation }: Props) => {
 	return (
 		<>
 			<Header />
-			{navigation && <Nav pages={navigation.pages} />}
+			{navigation && <Nav pages={navigation} />}
 			<main>{children}</main>
-			{navigation && <Footer pages={navigation.pages} />}
+			<Footer />
 		</>
 	)
 }

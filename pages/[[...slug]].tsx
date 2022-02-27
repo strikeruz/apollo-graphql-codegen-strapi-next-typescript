@@ -2,9 +2,9 @@ import { GetStaticProps, NextPage, InferGetStaticPropsType, GetStaticPropsContex
 import { getPageData } from 'utils/api'
 import { Layout } from '@components/common/Layout'
 import DynamicZoneSections from '@components/DynamicZoneSections'
-import LocaleSwitch from '@components/locale-switch'
+import LocaleSwitch from '@components/Locale-switch'
 import { getLocalizedPaths, LocalizedPathsType } from 'utils/localize'
-import Seo from '@components/seo'
+import Seo from '@components/Seo'
 import { initializeApollo } from '@lib/apolloClient'
 import { GetPagesDocument, GetPagesQuery } from '../graphql/queries/__generated__/getPages'
 import { PageEntity, Page } from 'generated/global/types'
@@ -15,7 +15,19 @@ import { PageEntity, Page } from 'generated/global/types'
 
 const DynamicPage: NextPage = ({ pageContext }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
-		<Layout pageContext={pageContext}>
+		<Layout
+			pageContext={pageContext}
+			navigation={[
+				{
+					slug: '/',
+					title: 'Home',
+				},
+				{
+					slug: '/test',
+					title: 'Test',
+				},
+			]}
+		>
 			{/* Add meta tags for SEO*/}
 			<Seo
 				metadata={{
