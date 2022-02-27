@@ -20,7 +20,7 @@ const LocaleSwitch: FC<Props> = ({ localizedPaths }) => {
 
 	useEffect(() => {
 		const localeCookie = Cookies.get('NEXT_LOCALE')
-		setLocale(localeCookie || router.locale)
+		setLocale(localeCookie || router.defaultLocale)
 	}, [locale, router, localizedPaths])
 
 	return (

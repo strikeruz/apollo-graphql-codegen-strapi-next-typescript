@@ -1,6 +1,6 @@
-import Hero from '@components/dynamic-components/hero'
-import { PageDynamicZoneDynamicZone } from 'generated/global/types'
 import { FC } from 'react'
+import { PageDynamicZoneDynamicZone } from 'generated/global/types'
+import Hero from '@components/dynamic-components/hero'
 
 // Map Strapi sections to dynamicZone components
 const dynamicComponentList = {

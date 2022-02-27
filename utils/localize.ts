@@ -9,7 +9,6 @@ export type LocalizedPathsType = {
   href: string
 }
 
-
 export function localizePath(pageContext: ILocalizePath) {
   const { locale, defaultLocale, slug } = pageContext
 
@@ -28,7 +27,7 @@ export function getLocalizedPaths(pageContext: GetStaticPropsContext): Localized
       locale,
       href: localizePath({ ...pageContext, locale }),
     }
-  }) as  []
+  }) as []
 
   return paths
 }

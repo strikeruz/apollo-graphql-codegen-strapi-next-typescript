@@ -14,31 +14,26 @@ import { PageEntity, Page } from 'generated/global/types'
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
 const DynamicPage: NextPage = ({ pageContext }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	const { dynamicZone, localizedPaths } = pageContext
-
-	const demoMetaData = {
-		metaTitle: 'Meta Title',
-		metaDescription: 'Meta Desc',
-	}
-
 	return (
 		<Layout pageContext={pageContext}>
 			{/* Add meta tags for SEO*/}
-			<Seo metadata={demoMetaData} />
+			<Seo
+				metadata={{
+					metaTitle: 'Meta Title',
+					metaDescription: 'Meta Desc',
+				}}
+			/>
 			{/* Display localized page */}
-			{pageContext.localizedPaths && (
-				<div>
-					<LocaleSwitch localizedPaths={localizedPaths} />
-				</div>
-			)}
+			{pageContext?.localizedPaths ? <LocaleSwitch localizedPaths={pageContext.localizedPaths} /> : null}
 			{/* Display content sections */}
-			<DynamicZoneSections dynamicZones={dynamicZone} />
+			{pageContext?.dynamicZone ? <DynamicZoneSections dynamicZones={pageContext.dynamicZone} /> : null}
 		</Layout>
 	)
 }
 
-const client = initializeApollo()
+export default DynamicPage
 
+const client = initializeApollo()
 export const getStaticPaths = async (context: GetStaticPropsContext) => {
 	// Get all pages from Strapi
 	const allPages = context.locales
@@ -105,5 +100,3 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
 		revalidate: 10,
 	}
 }
-
-export default DynamicPage

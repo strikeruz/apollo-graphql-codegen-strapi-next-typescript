@@ -1,10 +1,11 @@
+import { Page } from 'generated/global/types'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
 import { Nav } from '../Nav'
 
 type Props = {
 	children: React.ReactNode
-	pageContext?: any
+	pageContext?: Page
 	navigation?: any
 }
 

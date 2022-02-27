@@ -1,6 +1,6 @@
-import { ComponentSharedTitle } from 'generated/global/types'
-import { useTranslations } from 'next-intl'
 import { FC } from 'react'
+import { useTranslations } from 'next-intl'
+import { ComponentSharedTitle } from 'generated/global/types'
 
 type Props = {
 	data: ComponentSharedTitle
@@ -8,7 +8,6 @@ type Props = {
 
 const Hero: FC<Props> = ({ data }) => {
 	const t = useTranslations('Home')
-
 	return (
 		<>
 			<h1>Title: {data.title}</h1>
